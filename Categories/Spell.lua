@@ -46,15 +46,15 @@ DogTag:AddTag("Stats", "SpellCrit", {
 	code = function(school)
 		if not school then
 			return min(
-				GetSpellBonusDamage(2),
-				GetSpellBonusDamage(3),
-				GetSpellBonusDamage(4),
-				GetSpellBonusDamage(5),
-				GetSpellBonusDamage(6),
-				GetSpellBonusDamage(7)
+				GetSpellCritChance(2),
+				GetSpellCritChance(3),
+				GetSpellCritChance(4),
+				GetSpellCritChance(5),
+				GetSpellCritChance(6),
+				GetSpellCritChance(7)
 			)
 		else
-			return GetSpellBonusDamage(school)
+			return GetSpellCritChance(school)
 		end
 	end,
 	arg = {

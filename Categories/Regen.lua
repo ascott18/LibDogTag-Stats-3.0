@@ -15,7 +15,7 @@ DogTag:AddTag("Stats", "ManaRegen", {
 	ret = "number",
 	events = "Update",
 	doc = L["Returns your out-of-combat mana regen (mana per second)."],
-	example = '[ManaRegen] => "2124"',
+	example = '[ManaRegen] => "421"; [ManaRegen * 5] => "2105"',
 	category = L["Regen"],
 })
 
@@ -26,7 +26,7 @@ DogTag:AddTag("Stats", "CombatManaRegen", {
 	ret = "number",
 	events = "UNIT_STATS#player;Update",
 	doc = L["Returns your in-combat mana regen (mana per second)."],
-	example = '[CombatManaRegen] => "562"',
+	example = '[CombatManaRegen] => "123"; [CombatManaRegen * 5] => "615"',
 	category = L["Regen"],
 })
 
