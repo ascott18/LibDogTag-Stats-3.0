@@ -49,6 +49,13 @@ DogTag_Stats.L =
 	["Returns your healing increase percentage from PvP power."] = "Returns your healing increase percentage from PvP power.",
 	["Returns your damage or healing increase percentage from PvP power (whichever is greater)."] = "Returns your damage or healing increase percentage from PvP power (whichever is greater).",
 	["Returns your PvP power rating."] = "Returns your PvP power rating.",
+	["Returns your melee hit percentage increase."] = "Returns your melee hit percentage increase.",
+	["Returns your normal attack (white hit) miss chance against an enemy of the specified number of levels higher than you (max level difference is 3)"] = "Returns your normal attack (white hit) miss chance against an enemy of the specified number of levels higher than you (max level difference is 3)",
+	["Returns your special attack (yellow hit) miss chance against an enemy of the specified number of levels higher than you (max level difference is 3)"] = "Returns your special attack (yellow hit) miss chance against an enemy of the specified number of levels higher than you (max level difference is 3)",
+	["Returns your ranged hit percentage increase."] = "Returns your ranged hit percentage increase.",
+	["Returns your ranged miss chance against an enemy of the specified number of levels higher than you (max level difference is 3)"] = "Returns your ranged miss chance against an enemy of the specified number of levels higher than you (max level difference is 3)",
+	["Returns your spell hit percentage increase."] = "Returns your spell hit percentage increase.",
+	["Returns your spell miss chance against an enemy of the specified number of levels higher than you (max level difference is 3)"] = "Returns your spell miss chance against an enemy of the specified number of levels higher than you (max level difference is 3)",
 
 }
 
