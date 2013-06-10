@@ -29,7 +29,7 @@ DogTag:AddTag("Stats", "ResilienceReduction", {
 	ret = "number",
 	events = "COMBAT_RATING_UPDATE",
 	doc = L["Returns your damage reduction percentage from resilience."],
-	example = '[ResilienceReduction:Round(1)] => "61.5"',
+	example = '[ResilienceReduction:Round(1)] => "61.5"; [ResilienceReduction:Round(1):Percent] => "61.5%"',
 	category = L["PvP"],
 })
 
@@ -38,7 +38,7 @@ DogTag:AddTag("Stats", "PvPPowerDamage", {
 	ret = "number",
 	events = "COMBAT_RATING_UPDATE",
 	doc = L["Returns your damage increase percentage from PvP power."],
-	example = '[PvPPowerDamage:Round(1)] => "37.9"',
+	example = '[PvPPowerDamage:Round(1)] => "37.9"; [PvPPowerDamage:Round(1):Percent] => "37.9%"',
 	category = L["PvP"],
 })
 
@@ -47,7 +47,7 @@ DogTag:AddTag("Stats", "PvPPowerHealing", {
 	ret = "number",
 	events = "COMBAT_RATING_UPDATE",
 	doc = L["Returns your healing increase percentage from PvP power."],
-	example = '[PvPPowerHealing:Round(1)] => "37.8"',
+	example = '[PvPPowerHealing:Round(1)] => "37.8"; [PvPPowerHealing:Round(1):Percent] => "37.8%"',
 	category = L["PvP"],
 })
 
@@ -55,7 +55,7 @@ DogTag:AddTag("Stats", "PvPPower", {
 	alias = [=[Max(PvPPowerDamage, PvPPowerHealing)]=],
 	ret = "number",
 	doc = L["Returns your damage or healing increase percentage from PvP power (whichever is greater)."],
-	example = '[PvPPower:Round(1)] => "37.9"',
+	example = '[PvPPower:Round(1)] => "37.9"; [PvPPower:Round(1):Percent] => "37.9%"',
 	category = L["PvP"],
 })
 

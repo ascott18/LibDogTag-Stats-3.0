@@ -33,7 +33,8 @@ DogTag:AddTag("Stats", "ArmorReduction", {
 	ret = "number",
 	events = "UNIT_RESISTANCES#player",
 	doc = L["Returns your percentage of damage reduction from armor. Pass in a level as a parameter to calculate damage reduction against that level enemy."],
-	example = ('[ArmorReduction:Round(1)] => "35.7"; [ArmorReduction(%d):Round(1)] => "32.1"'):format(GetMaxPlayerLevel() + 3),
+	example = ('[ArmorReduction:Round(1)] => "35.7"; [ArmorReduction:Round(1):Percent] => "35.7%%"; [ArmorReduction(%d):Round(1):Percent] => "31.1%%"')
+		:format(GetMaxPlayerLevel() + 3),
 	category = L["Defense"],
 })
 
@@ -42,7 +43,7 @@ DogTag:AddTag("Stats", "DodgeChance", {
 	ret = "number",
 	events = "COMBAT_RATING_UPDATE",
 	doc = L["Returns your dodge chance."],
-	example = '[DodgeChance:Round(1)] => "13.2"',
+	example = '[DodgeChance:Round(1)] => "13.2"; [DodgeChance:Round(1):Percent] => "13.2%"',
 	category = L["Defense"],
 })
 
@@ -51,7 +52,7 @@ DogTag:AddTag("Stats", "ParryChance", {
 	ret = "number",
 	events = "COMBAT_RATING_UPDATE",
 	doc = L["Returns your parry chance."],
-	example = '[ParryChance:Round(1)] => "13.2"',
+	example = '[ParryChance:Round(1)] => "13.2"; [ParryChance:Round(1):Percent] => "13.2%"',
 	category = L["Defense"],
 })
 
@@ -60,7 +61,7 @@ DogTag:AddTag("Stats", "BlockChance", {
 	ret = "number",
 	events = "COMBAT_RATING_UPDATE",
 	doc = L["Returns your block chance."],
-	example = '[BlockChance:Round(1)] => "13.2"',
+	example = '[BlockChance:Round(1)] => "13.2"; [BlockChance:Round(1):Percent] => "13.2%"',
 	category = L["Defense"],
 })
 
@@ -69,7 +70,7 @@ DogTag:AddTag("Stats", "BlockAmount", {
 	ret = "number",
 	events = "COMBAT_RATING_UPDATE",
 	doc = L["Returns your block amount percentage."],
-	example = '[BlockAmount:Round(1)] => "32.2"',
+	example = '[BlockAmount:Round(1)] => "32.2"; [BlockAmount:Round(1):Percent] => "32.2%"',
 	category = L["Defense"],
 })
 

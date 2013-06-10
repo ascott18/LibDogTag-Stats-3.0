@@ -26,7 +26,7 @@ DogTag:AddTag("Stats", "RangedCrit", {
 	ret = "number",
 	events = "COMBAT_RATING_UPDATE",
 	doc = L["Returns your ranged crit chance"],
-	example = '[RangedCrit:Round(1)] => "23.4"',
+	example = '[RangedCrit:Round(1)] => "23.4"; [RangedCrit:Round(1):Percent] => "23.4%"',
 	category = L["Ranged"],
 })
 
@@ -35,7 +35,7 @@ DogTag:AddTag("Stats", "RangedHaste", {
 	ret = "number",
 	events = "UNIT_RANGEDDAMAGE#player",
 	doc = L["Returns your ranged haste percentage"],
-	example = '[RangedHaste:Round(1)] => "32.7"',
+	example = '[RangedHaste:Round(1)] => "32.7"; [RangedHaste:Round(1):Percent] => "32.7%"',
 	category = L["Ranged"],
 })
 
@@ -47,6 +47,35 @@ DogTag:AddTag("Stats", "RangedExpertise", {
 	events = "COMBAT_RATING_UPDATE",
 	doc = L["Returns your ranged expertise"],
 	example = '[RangedExpertise] => "5.25"',
+	category = L["Ranged"],
+})
+
+DogTag:AddTag("Stats", "RangedHit", {
+	code = function()
+		return GetCombatRatingBonus(CR_HIT_RANGED) + GetHitModifier()
+	end,
+	ret = "number",
+	events = "COMBAT_RATING_UPDATE",
+	doc = L["Returns your ranged hit percentage increase."],
+	example = '[RangedHit:Round(1)] => "8.1"; [RangedHit:Round(1):Percent] => "8.1%"',
+	category = L["Ranged"],
+})
+
+DogTag:AddTag("Stats", "RangedMissChance", {
+	code = function(leveloffset)
+		if (leveloffset < 0 or leveloffset > 3) then
+			DogTag.tagError("[RangedMissChance]", "Stats", "leveloffset must be between 0 and 3, inclusive (got " .. leveloffset .. ").")
+		end
+
+		return GetRangedMissChance(leveloffset)
+	end,
+	arg = {
+		'leveloffset', 'number;undef', 0
+	},
+	ret = "number",
+	events = "COMBAT_RATING_UPDATE",
+	doc = L["Returns your ranged miss chance against an enemy of the specified number of levels higher than you (max level difference is 3)"],
+	example = '[RangedMissChance:Round(1)] => "3"; [RangedMissChance(3):Round(1):Percent] => "7.5%"',
 	category = L["Ranged"],
 })
 

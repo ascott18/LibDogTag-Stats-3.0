@@ -63,7 +63,7 @@ DogTag:AddTag("Stats", "SpellCrit", {
 	ret = "number",
 	events = "COMBAT_RATING_UPDATE",
 	doc = L["Returns your spell crit chance."],
-	example = '[SpellCrit:Round(1)] => "41.8"',
+	example = '[SpellCrit:Round(1)] => "41.8"; [SpellCrit:Round(1):Percent] => "41.8%"',
 	category = L["Spell"],
 })
 
@@ -74,7 +74,36 @@ DogTag:AddTag("Stats", "SpellHaste", {
 	ret = "number",
 	events = "COMBAT_RATING_UPDATE;UNIT_SPELL_HASTE#player",
 	doc = L["Returns your spell haste percentage."],
-	example = '[SpellHaste:Round(1)] => "28.1"',
+	example = '[SpellHaste:Round(1)] => "28.1"; [SpellHaste:Round(1):Percent] => "28.1%"',
+	category = L["Spell"],
+})
+
+DogTag:AddTag("Stats", "SpellHit", {
+	code = function()
+		return GetCombatRatingBonus(CR_HIT_SPELL) + GetSpellHitModifier()
+	end,
+	ret = "number",
+	events = "COMBAT_RATING_UPDATE",
+	doc = L["Returns your spell hit percentage increase."],
+	example = '[SpellHit:Round(1)] => "14.1"; [SpellHit:Round(1):Percent] => "14.1%"',
+	category = L["Spell"],
+})
+
+DogTag:AddTag("Stats", "SpellMissChance", {
+	code = function(leveloffset)
+		if (leveloffset < 0 or leveloffset > 3) then
+			DogTag.tagError("[SpellMissChance]", "Stats", "leveloffset must be between 0 and 3, inclusive (got " .. leveloffset .. ").")
+		end
+
+		return GetSpellMissChance(leveloffset)
+	end,
+	arg = {
+		'leveloffset', 'number;undef', 0
+	},
+	ret = "number",
+	events = "COMBAT_RATING_UPDATE",
+	doc = L["Returns your spell miss chance against an enemy of the specified number of levels higher than you (max level difference is 3)"],
+	example = '[SpellMissChance:Round(1)] => "5"; [SpellMissChance(3):Round(1):Percent] => "15%"',
 	category = L["Spell"],
 })
 
