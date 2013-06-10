@@ -66,7 +66,7 @@ DogTag:AddTag("Stats", "MeleeNormalMissChance", {
 			DogTag.tagError("[MeleeNormalMissChance]", "Stats", "leveloffset must be between 0 and 3, inclusive (got " .. leveloffset .. ").")
 		end
 
-		return GetSpellMissChance(leveloffset, false)
+		return GetMeleeMissChance(leveloffset, false)
 	end,
 	arg = {
 		'leveloffset', 'number;undef', 0
@@ -84,7 +84,7 @@ DogTag:AddTag("Stats", "MeleeSpecialMissChance", {
 			DogTag.tagError("[MeleeSpecialMissChance]", "Stats", "leveloffset must be between 0 and 3, inclusive (got " .. leveloffset .. ").")
 		end
 
-		return GetSpellMissChance(leveloffset, true)
+		return GetMeleeMissChance(leveloffset, true)
 	end,
 	arg = {
 		'leveloffset', 'number;undef', 0

@@ -64,6 +64,7 @@ DogTag:AddTag("Stats", "PvPPowerRating", {
 		return GetCombatRating(CR_PVP_POWER)
 	end,
 	ret = "number",
+	events = "COMBAT_RATING_UPDATE",
 	doc = L["Returns your PvP power rating."],
 	example = '[PvPPowerRating] => "2354"',
 	category = L["PvP"],

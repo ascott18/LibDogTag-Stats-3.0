@@ -57,9 +57,9 @@ DogTag:AddTag("Stats", "ParryChance", {
 })
 
 DogTag:AddTag("Stats", "BlockChance", {
-	code = GetDodgeChance,
+	code = GetBlockChance,
 	ret = "number",
-	events = "COMBAT_RATING_UPDATE",
+	events = "COMBAT_RATING_UPDATE;UNIT_RESISTANCES#player",
 	doc = L["Returns your block chance."],
 	example = '[BlockChance:Round(1)] => "13.2"; [BlockChance:Round(1):Percent] => "13.2%"',
 	category = L["Defense"],
@@ -68,7 +68,7 @@ DogTag:AddTag("Stats", "BlockChance", {
 DogTag:AddTag("Stats", "BlockAmount", {
 	code = GetShieldBlock,
 	ret = "number",
-	events = "COMBAT_RATING_UPDATE",
+	events = "COMBAT_RATING_UPDATE;UNIT_RESISTANCES#player",
 	doc = L["Returns your block amount percentage."],
 	example = '[BlockAmount:Round(1)] => "32.2"; [BlockAmount:Round(1):Percent] => "32.2%"',
 	category = L["Defense"],

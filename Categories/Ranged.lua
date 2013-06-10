@@ -12,7 +12,8 @@ local L = DogTag_Stats.L
 
 DogTag:AddTag("Stats", "RangedAP", {
 	code = function()
-		return UnitRangedAttackPower("player")
+		local base, pos, neg = UnitRangedAttackPower("player")
+		return base + pos + neg
 	end,
 	ret = "number",
 	events = "UNIT_RANGED_ATTACK_POWER#player",

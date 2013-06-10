@@ -67,11 +67,11 @@ DogTag:AddTag("Stats", "Spirit", {
 })
 
 DogTag:AddTag("Stats", "Mastery", {
-	code = GetMastery,
+	code = GetMasteryEffect,
 	ret = "number",
 	events = "MASTERY_UPDATE",
-	doc = L["Returns your Mastery"],
-	example = '[Mastery] => "1234"',
+	doc = L["Returns your Mastery effect percentage"],
+	example = '[Mastery:Round(1)] => "17.2"; [Mastery:Round(1):Percent] => "17.2%"',
 	category = L["Stats"],
 })
 
