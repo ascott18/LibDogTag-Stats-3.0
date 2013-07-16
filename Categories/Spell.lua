@@ -26,11 +26,11 @@ DogTag:AddTag("Stats", "SpellDamage", {
 		end
 	end,
 	arg = {
-		'school', 'number;undef', 'nil'
+		'school', 'number;undef', "@undef",
 	},
 	ret = "number",
 	events = "PLAYER_DAMAGE_DONE_MODS;SPELL_POWER_CHANGED",
-	doc = L["Returns your bonus spell damage amount."],
+	doc = L["Returns your bonus spell damage amount. School can be blank/nil for the lowest of all schools, 2 for Holy, 3 for Fire, 4 for Nature, 5 for Frost, 6 for Shadow, or 7 for Arcane."],
 	example = '[SpellDamage] => "8476"',
 	category = L["Spell"],
 })
@@ -58,11 +58,11 @@ DogTag:AddTag("Stats", "SpellCrit", {
 		end
 	end,
 	arg = {
-		'school', 'number;undef', 'nil'
+		'school', 'number;undef', "@undef",
 	},
 	ret = "number",
 	events = "COMBAT_RATING_UPDATE",
-	doc = L["Returns your spell crit chance."],
+	doc = L["Returns your spell crit chance. School can be blank/nil for the lowest of all schools, 2 for Holy, 3 for Fire, 4 for Nature, 5 for Frost, 6 for Shadow, or 7 for Arcane."],
 	example = '[SpellCrit:Round(1)] => "41.8"; [SpellCrit:Round(1):Percent] => "41.8%"',
 	category = L["Spell"],
 })
