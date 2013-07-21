@@ -61,7 +61,7 @@ DogTag:AddTag("Stats", "SpellCrit", {
 		'school', 'number;undef', "@undef",
 	},
 	ret = "number",
-	events = "COMBAT_RATING_UPDATE",
+	events = "COMBAT_RATING_UPDATE;UNIT_STATS#player",
 	doc = L["Returns your spell crit chance. School can be blank/nil for the lowest of all schools, 2 for Holy, 3 for Fire, 4 for Nature, 5 for Frost, 6 for Shadow, or 7 for Arcane."],
 	example = '[SpellCrit:Round(1)] => "41.8"; [SpellCrit:Round(1):Percent] => "41.8%"',
 	category = L["Spell"],
