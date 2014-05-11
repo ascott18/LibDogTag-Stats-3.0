@@ -76,4 +76,28 @@ DogTag:AddTag("Stats", "Mastery", {
 })
 
 
+DogTag:AddTag("Stats", "CurrentSpeed", {
+	code = function()
+		return floor(GetUnitSpeed("player") / BASE_MOVEMENT_SPEED * 100 + 0.5)
+	end,
+	ret = "number",
+	events = "Update;UNIT_AURA#player",
+	doc = L["Returns your current movement speed. If you are not moving, this value is 0."],
+	example = '[CurrentSpeed] => "100"; [CurrentSpeed:Percent] => "100%"',
+	category = L["Stats"],
+})
+
+DogTag:AddTag("Stats", "GroundSpeed", {
+	code = function()
+		local _, groundSpeed = GetUnitSpeed("player")
+		return floor(groundSpeed / BASE_MOVEMENT_SPEED * 100 + 0.5)
+	end,
+	ret = "number",
+	events = "Update;UNIT_AURA#player",
+	doc = L["Returns your maximum ground movement speed. This will reflect any movement speed debuffs."],
+	example = '[GroundSpeed] => "50"; [GroundSpeed:Percent] => "50%"',
+	category = L["Stats"],
+})
+
+
 end
