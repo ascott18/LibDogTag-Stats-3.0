@@ -10,7 +10,6 @@ DogTag_Stats_funcs[#DogTag_Stats_funcs+1] = function(DogTag_Stats, DogTag)
 local L = DogTag_Stats.L
 
 
-
 DogTag:AddTag("Stats", "Strength", {
 	code = function()
 		return UnitStat("player", 1)
@@ -52,26 +51,6 @@ DogTag:AddTag("Stats", "Intellect", {
 	events = "UNIT_STATS#player",
 	doc = L["Returns your Intellect"],
 	example = '[Intellect] => "1234"',
-	category = L["Stats"],
-})
-
-DogTag:AddTag("Stats", "Spirit", {
-	code = function()
-		return UnitStat("player", 5)
-	end,
-	ret = "number",
-	events = "UNIT_STATS#player",
-	doc = L["Returns your Spirit"],
-	example = '[Spirit] => "1234"',
-	category = L["Stats"],
-})
-
-DogTag:AddTag("Stats", "Mastery", {
-	code = GetMasteryEffect,
-	ret = "number",
-	events = "MASTERY_UPDATE",
-	doc = L["Returns your Mastery effect percentage"],
-	example = '[Mastery:Round(1)] => "17.2"; [Mastery:Round(1):Percent] => "17.2%"',
 	category = L["Stats"],
 })
 
