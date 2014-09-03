@@ -69,11 +69,13 @@ if wow_600 then
 		category = L["Enhancements"],
 	})
 	DogTag:AddTag("Stats", "Versatility", { -- TODO: MAKE INTO PERCENTAGES
-		code = GetVersatility,
+		code = function()
+			return GetCombatRatingBonus(CR_VERSATILITY_DAMAGE_DONE) + GetVersatilityBonus(CR_VERSATILITY_DAMAGE_DONE)
+		end,
 		ret = "number",
 		events = "COMBAT_RATING_UPDATE",
-		doc = L["Returns your Versatility rating"],
-		example = '[Versatility] => "101"',
+		doc = L["Returns your Versatility damage and healing increase percentage."],
+		example = '[Versatility] => "3.6; [Versatility:Round(1):Percent] => "3.6%""',
 		category = L["Enhancements"],
 	})
 	DogTag:AddTag("Stats", "Avoidance", {
@@ -81,7 +83,7 @@ if wow_600 then
 		ret = "number",
 		events = "AVOIDANCE_UPDATE",
 		doc = L["Returns your Avoidance percentage"],
-		example = '[Avoidance:Round(1)] => "2.2"; [Multistrike:Round(1):Percent] => "2.2%"',
+		example = '[Avoidance:Round(1)] => "2.2"; [Avoidance:Round(1):Percent] => "2.2%"',
 		category = L["Enhancements"],
 	})
 end
