@@ -75,7 +75,7 @@ if wow_600 then
 		ret = "number",
 		events = "COMBAT_RATING_UPDATE",
 		doc = L["Returns your Versatility damage and healing increase percentage."],
-		example = '[Versatility] => "3.6; [Versatility:Round(1):Percent] => "3.6%""',
+		example = '[Versatility] => "3.6"; [Versatility:Round(1):Percent] => "3.6%"',
 		category = L["Enhancements"],
 	})
 	DogTag:AddTag("Stats", "Avoidance", {
