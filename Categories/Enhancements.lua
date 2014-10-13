@@ -68,7 +68,7 @@ if wow_600 then
 		example = '[Lifesteal:Round(1)] => "1.2"; [Lifesteal:Round(1):Percent] => "1.2%"',
 		category = L["Enhancements"],
 	})
-	DogTag:AddTag("Stats", "Versatility", { -- TODO: MAKE INTO PERCENTAGES
+	DogTag:AddTag("Stats", "Versatility", {
 		code = function()
 			return GetCombatRatingBonus(CR_VERSATILITY_DAMAGE_DONE) + GetVersatilityBonus(CR_VERSATILITY_DAMAGE_DONE)
 		end,
