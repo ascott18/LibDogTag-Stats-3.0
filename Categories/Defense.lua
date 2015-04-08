@@ -41,7 +41,8 @@ DogTag:AddTag("Stats", "ArmorReduction", {
 DogTag:AddTag("Stats", "DodgeChance", {
 	code = GetDodgeChance,
 	ret = "number",
-	events = "COMBAT_RATING_UPDATE",
+	-- PLAYER_DAMAGE_DONE_MODS is needed for Elusive Brew, and possibly others.
+	events = "COMBAT_RATING_UPDATE;PLAYER_DAMAGE_DONE_MODS",
 	doc = L["Returns your dodge chance."],
 	example = '[DodgeChance:Round(1)] => "13.2"; [DodgeChance:Round(1):Percent] => "13.2%"',
 	category = L["Defense"],
@@ -50,7 +51,7 @@ DogTag:AddTag("Stats", "DodgeChance", {
 DogTag:AddTag("Stats", "ParryChance", {
 	code = GetParryChance,
 	ret = "number",
-	events = "COMBAT_RATING_UPDATE",
+	events = "COMBAT_RATING_UPDATE;PLAYER_DAMAGE_DONE_MODS",
 	doc = L["Returns your parry chance."],
 	example = '[ParryChance:Round(1)] => "13.2"; [ParryChance:Round(1):Percent] => "13.2%"',
 	category = L["Defense"],
