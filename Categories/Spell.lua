@@ -46,8 +46,14 @@ DogTag:AddTag("Stats", "SpellPower", {
 
 
 DogTag:AddTag("Stats", "SpellCrit", {
-	alias = "[CriticalStrike]",
-	noDoc = true,
+	code = function(school)
+		return GetSpellCritChance()
+	end,
+	ret = "number",
+	events = "PLAYER_DAMAGE_DONE_MODS;COMBAT_RATING_UPDATE",
+	doc = L["Returns your spell crit chance."],
+	example = '[SpellCrit:Round(1)] => "41.8"; [SpellCrit:Round(1):Percent] => "41.8%"',
+	category = L["Spell"],
 })
 
 DogTag:AddTag("Stats", "SpellHaste", {
