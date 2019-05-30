@@ -23,9 +23,17 @@ DogTag:AddTag("Stats", "ArmorRating", {
 
 DogTag:AddTag("Stats", "ArmorReduction", {
 	code = function(level)
-		level = level or UnitLevel("player")
 		local base, effectiveArmor = UnitArmor("player");
-		return PaperDollFrame_GetArmorReduction(effectiveArmor, level);
+		if PaperDollFrame_GetArmorReduction then
+			-- Supports WoW BFA+
+			level = level or UnitLevel("player")
+			return PaperDollFrame_GetArmorReduction(effectiveArmor, level);
+		else
+			-- Supports WoW Classic
+			level = level or UnitLevel("player")
+			local armorReduction = effectiveArmor/((85 * level) + 400);
+			return 100 * (armorReduction/(armorReduction + 1));
+		end
 	end,
 	arg = {
 		'level', 'number;undef', "@undef",
